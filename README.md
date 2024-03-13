@@ -1,2 +1,2 @@
 # Coral-Store
- Teste de seleção para empresa Metadados
+ Teste de seleção para empresa Metadados.
