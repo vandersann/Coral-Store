@@ -1,4 +1,3 @@
-// src/components/ProductCard.tsx
 
 import React from 'react';
 import styled from 'styled-components';
@@ -28,18 +27,18 @@ const Price = styled.p`
 
 interface ProductCardProps {
     product: Product;
-    onUpdate: (updatedProduct: Product) => void; // Corrigido para usar Product como tipo
-    onDelete: () => void;
-    }
+    onUpdate?: (updatedProduct: Product) => void;
+    onDelete?: () => void;
+}
 
     const ProductCard: React.FC<ProductCardProps> = ({ product, onUpdate, onDelete }) => {
     const handleUpdate = () => {
-        const updatedProduct: Product = { ...product, price: product.price + 10 }; // Exemplo de atualização
-        onUpdate(updatedProduct);
+        const updatedProduct: Product = { ...product, price: product.price + 10 };
+        onUpdate && onUpdate(updatedProduct);
     };
 
     const handleDelete = () => {
-        onDelete();
+        onDelete && onDelete();
     };
 
     return (
